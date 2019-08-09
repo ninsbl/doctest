@@ -107,14 +107,19 @@ RUN apt-get update && \
     ncurses-bin \
     netcdf-bin \
     p7zip-full \
+    python3-fiona \
     python3-gdal \
+    python3-geopandas \
     #python3-pdal \
     python3-pillow \
+    python3-matplotlib \
+    python3-netcdf4 \
     python3-numpy \
     python3-osmapi \
     python3-overpass \
     python3-overpy \
     python3-rasterio \
+    python3-scipy \
     python3-shapely \
     python3-six \
     postgresql \
@@ -130,7 +135,7 @@ RUN apt-get update && \
     xterm python3-pip \
     python3-setuptools cython3 \
     zlib1g-dev qgis saga libsaga-dev python-saga rasterio python3-rasterio libsfcgal-dev spatialite-gui libspatialite-dev \
-    shapelib libshp-dev python-pyspatialite python3-owslib gmt fiona octave-mapping \
+    shapelib libshp-dev python3-pyspatialite python3-owslib gmt fiona octave-mapping \
     python3-otb otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev python3-gdal gdal-bin&& \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
