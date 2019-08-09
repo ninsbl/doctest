@@ -70,6 +70,8 @@ RUN apt-get update && \
     libbz2-dev \
     libcairo2 \
     libcairo2-dev \
+    libcitygml-bin \
+    libcitygml-dev \
     libcurl4-gnutls-dev \
     libfftw3-bin \
     libfftw3-dev \
@@ -94,8 +96,10 @@ RUN apt-get update && \
     libpq-dev \
     libpython3-all-dev \
     libproj-dev \
+    libqgis-dev \
     libreadline-dev \
     libsqlite3-dev \
+    libspatialite-dev \
     libtiff-dev \
     libxmu-dev \
     libzstd-dev \
@@ -110,8 +114,11 @@ RUN apt-get update && \
     python3-fiona \
     python3-gdal \
     python3-geopandas \
+    python3-otb \
+    python3-owslib \
     #python3-pdal \
     python3-pillow \
+    python3-pip \
     python3-matplotlib \
     python3-netcdf4 \
     python3-numpy \
@@ -132,11 +139,12 @@ RUN apt-get update && \
     vim \
     virtualenv \
     wget \
-    xterm python3-pip \
+    xterm \
     python3-setuptools cython3 \
-    zlib1g-dev qgis saga libsaga-dev python-saga rasterio python3-rasterio libsfcgal-dev spatialite-gui libspatialite-dev \
-    shapelib libshp-dev python3-pyspatialite python3-owslib gmt fiona octave-mapping \
-    python3-otb otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev python3-gdal gdal-bin&& \
+    zlib1g-dev qgis saga libsaga-dev python-saga rasterio libsfcgal-dev spatialite-gui \
+    shapelib libshp-dev gmt fiona octave-mapping \
+    otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev gdal-bin \
+    qgis python3-qgis qgis-plugin-grass && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
