@@ -112,7 +112,7 @@ RUN apt-get update && \
     ncurses-bin \
     netcdf-bin \
     p7zip-full \
-    python3-argparse-manpage \
+    # python3-argparse-manpage \
     python3-dateutil \
     python3-dev \
     python3-extras \
@@ -152,7 +152,7 @@ RUN apt-get update && \
     python3-xlsxwriter \
     python3-xlrd \
     python3-yaml \
-    postgresql-dev \
+    postgresql \
     proj-bin \
     proj-data \
     sqlite3 \
