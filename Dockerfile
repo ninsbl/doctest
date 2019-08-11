@@ -61,6 +61,7 @@ RUN apt-get update && \
     gettext \
     git \
     gnutls-bin \
+    ipython3 \
     libapt-pkg-perl \
     libboost-system-dev \
     libboost-thread-dev \
@@ -111,13 +112,23 @@ RUN apt-get update && \
     ncurses-bin \
     netcdf-bin \
     p7zip-full \
+    python3-argparse-manpage \
+    python3-dateutil \
+    python3-dev \
+    python3-extras \
     python3-fiona \
     python3-gdal \
     python3-geopandas \
+    python3-httplib2 \
+    python3-jinja2 \
+    python3-libxml2 \
+    python3-mysqldb \
     python3-otb \
     python3-owslib \
     #python3-pdal \
+    python3-pep8 \
     python3-pillow \
+    python3-pil \
     python3-pip \
     python3-matplotlib \
     python3-netcdf4 \
@@ -125,11 +136,23 @@ RUN apt-get update && \
     python3-osmapi \
     python3-overpass \
     python3-overpy \
+    python3-pandas \
     python3-rasterio \
+    python3-requests \
     python3-scipy \
     python3-shapely \
+    python3-sklearn \
+    python3-simplejson \
+    python3-sip \
     python3-six \
-    postgresql \
+    python3-sqlalchemy \
+    python3-tk \
+    python3-unittest2 \
+    python3-urllib3 \
+    python3-xlsxwriter \
+    python3-xlrd \
+    python3-yaml \
+    postgresql-dev \
     proj-bin \
     proj-data \
     sqlite3 \
@@ -159,6 +182,8 @@ RUN pip3 install \
     scikit-learn \
     grass-session \
     pymodis \
+    pystan \
+    pymc3 \
     sentinelsat \
     pandas \
     gbif
