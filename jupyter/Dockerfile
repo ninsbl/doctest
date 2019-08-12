@@ -269,5 +269,3 @@ RUN rm -rf /src/*
 # Reduce the image size
 RUN apt-get autoremove -y
 RUN apt-get clean -y
-
-USER 1000
