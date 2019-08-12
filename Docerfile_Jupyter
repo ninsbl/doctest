@@ -74,6 +74,7 @@ RUN apt-get update && \
     libcitygml-bin \
     libcitygml-dev \
     libcurl4-gnutls-dev \
+    libdap \
     libfftw3-bin \
     libfftw3-dev \
     libfreetype6-dev \
@@ -138,6 +139,7 @@ RUN apt-get update && \
     python3-overpass \
     python3-overpy \
     python3-pandas \
+    python3-pydap \
     python3-rasterio \
     python3-requests \
     python3-scipy \
