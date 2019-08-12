@@ -10,7 +10,7 @@ LABEL authors="Stefan Blumentrath"
 LABEL maintainer="stefan.blumentrath@nina.no"
 
 # PACKAGES VERSIONS
-ARG GRASS_VERSION=7.7
+ARG GRASS_VERSION=7.9
 ARG PYTHON_VERSION=3
 ARG PROJ_VERSION=5.2.0
 ARG PROJ_DATUMGRID_VERSION=1.8
@@ -120,6 +120,7 @@ RUN apt-get update && \
     python3-gdal \
     python3-geopandas \
     python3-httplib2 \
+    python3-igraph \
     python3-jinja2 \
     python3-libxml2 \
     python3-mysqldb \
