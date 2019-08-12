@@ -74,7 +74,7 @@ RUN apt-get update && \
     libcitygml-bin \
     libcitygml-dev \
     libcurl4-gnutls-dev \
-    libdap \
+    libdap-dev \
     libfftw3-bin \
     libfftw3-dev \
     libfreetype6-dev \
