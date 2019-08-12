@@ -152,6 +152,15 @@ RUN apt-get update && \
     python3-tk \
     python3-unittest2 \
     python3-urllib3 \
+    ##########################
+    python3-wxgtk4.0 \
+    python3-wxgtk-webview4.0 \
+    python3-wxgtk-media4.0 \
+    python3-gst-1.0 \
+    freeglut3-dev \
+    libglib2.0-dev \
+    libgstreamer-gl1.0-0 \
+    ##########################
     python3-xlsxwriter \
     python3-xlrd \
     python3-yaml \
