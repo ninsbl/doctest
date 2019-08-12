@@ -188,6 +188,7 @@ RUN pip3 install \
     pystan \
     pymc3 \
     sentinelsat \
+    threddsclient \
     pandas \
     gbif
 
