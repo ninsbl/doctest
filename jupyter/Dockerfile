@@ -266,7 +266,7 @@ ENV CXXFLAGS ""
 ENV SHELL /bin/bash
 
 ENV PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/spark/bin"
-COPY systempy.sh /opt/src/
+COPY jupyter/systempy.sh /opt/src/
 RUN /bin/bash /opt/src/systempy.sh
 
 # Clean up the compiled files
