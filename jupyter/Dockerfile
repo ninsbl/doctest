@@ -265,7 +265,6 @@ ENV CXXFLAGS ""
 # set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
 ENV SHELL /bin/bash
 
-ENV PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/spark/bin"
 COPY jupyter/systempy.sh /opt/src/
 RUN /bin/bash /opt/src/systempy.sh
 
