@@ -265,11 +265,12 @@ ENV CXXFLAGS ""
 # set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
 ENV SHELL /bin/bash
 
-# Clean up the compiled files
-RUN rm -rf /src/*
-
 ENV PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/spark/bin"
-RUN ./systempy.sh
+COPY systempy.sh /opt/src/
+RUN /bin/bash /opt/src/systempy.sh
+
+# Clean up the compiled files
+RUN rm -rf /opt/src/*
 
 # Reduce the image size
 RUN apt-get autoremove -y
