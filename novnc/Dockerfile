@@ -1,5 +1,5 @@
 # The image to use as a base image
-FROM quay.io/uninett/desktop-vnc:20190411-224b417
+FROM quay.io/uninett/desktop-vnc:20190813-33e072c
 
 # Based on:
 # https://github.com/mundialis/docker-grass-gis/blob/master/Dockerfile
