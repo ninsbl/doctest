@@ -250,6 +250,8 @@ RUN make install && ldconfig
 # enable simple grass command regardless of version number
 RUN ln -s `find /usr/local/bin -name "grass*"` /usr/local/bin/grass
 
+WORKDIR $HOME
+
 # Unset environmental variables to avoid later compilation issues
 ENV INTEL ""
 ENV MYCFLAGS ""
@@ -266,10 +268,16 @@ ENV SHELL /bin/bash
 # Clean up the compiled files
 RUN rm -rf /src/*
 
+ENV PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/spark/bin"
+RUN PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/spark/bin" \
+    /usr/bin/pip3 install virtualenv \
+    /usr/bin/python3 -m virtualenv --system-site-packages -p /usr/bin/python3 sysvenv \
+    source sysvenv/bin/activate \
+    sysvenv/bin/pip install ipykernel \
+    ipython3 kernel install --user --name=sysvenv --display-name='Python 3 (no conda)'
+
 # Reduce the image size
 RUN apt-get autoremove -y
 RUN apt-get clean -y
 
 USER notebook
-
-WORKDIR $HOME
