@@ -265,8 +265,9 @@ ENV CXXFLAGS ""
 # set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
 ENV SHELL /bin/bash
 
-COPY jupyter/systempy.sh /opt/src/
-RUN /bin/bash /opt/src/systempy.sh
+# System python kernel now already available in the base application
+#COPY jupyter/systempy.sh /opt/src/
+#RUN /bin/bash /opt/src/systempy.sh
 
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
