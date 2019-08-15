@@ -1,5 +1,5 @@
 # The image to use as a base image
-FROM quay.io/uninett/jupyter-spark:20190628-ba9526c
+FROM quay.io/uninett/jupyter-spark:20190814-a51cd1c
 
 # Based on:
 # https://github.com/mundialis/docker-grass-gis/blob/master/Dockerfile
