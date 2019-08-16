@@ -53,6 +53,8 @@ RUN apt-get update && \
     bzip2 \
     curl \
     cython \
+    cython3 \
+    default-jdk \
     flex \
     g++ \
     gcc \
@@ -108,6 +110,7 @@ RUN apt-get update && \
     libgeotiff-dev \
     libzstd-dev \
     make \
+    maven \
     mc \
     moreutils \
     ncurses-bin \
@@ -143,6 +146,7 @@ RUN apt-get update && \
     python3-rasterio \
     python3-requests \
     python3-scipy \
+    python3-setuptools \
     python3-shapely \
     python3-sklearn \
     python3-simplejson \
@@ -175,7 +179,6 @@ RUN apt-get update && \
     virtualenv \
     wget \
     xterm \
-    python3-setuptools cython3 \
     zlib1g-dev qgis saga libsaga-dev python-saga rasterio libsfcgal-dev spatialite-gui \
     shapelib libshp-dev gmt fiona octave-mapping \
     otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev gdal-bin \
@@ -192,6 +195,7 @@ RUN pip3 install \
     # iris \
     pysal \
     scikit-learn \
+    scikit-image \
     grass-session \
     pymodis \
     pystan \
@@ -272,8 +276,40 @@ ENV CXXFLAGS ""
 # set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
 ENV SHELL /bin/bash
 
+# download snap installer version 6.0
+RUN wget http://step.esa.int/downloads/6.0/installers/esa-snap_sentinel_unix_7_0.sh
+
+#change file execution rights for snap installer
+RUN chmod +x esa-snap_sentinel_unix_7_0.sh
+
+# install snap with gpt
+RUN ./esa-snap_sentinel_unix_7_0.sh -q
+
+# link gpt so it can be used systemwide
+RUN ln -s /usr/local/snap/bin/gpt /usr/bin/gpt
+
+# set gpt max memory to 4GB
+RUN sed -i -e 's/-Xmx1G/-Xmx4G/g' /usr/local/snap/bin/gpt.vmoptions
+
+RUN export JDK_HOME="/usr/lib/jvm/default-java"
+
+# build jpy module from source
+RUN cd /opt/src/ && \
+    git clone https://github.com/bcdev/jpy.git && \
+    cd /opt/src/jpy/ && \
+    python3 setup.py --maven bdist_wheel && \
+    mkdir -p /root/.snap/snap-python/snappy/&& \
+    cp /opt/src/jpy/dist/* /root/.snap/snap-python/snappy/
+
+
+# install snappy the SNAP python module
+RUN /usr/local/snap/bin/snappy-conf /usr/bin/python3
+RUN cd /root/.snap/snap-python/snappy/ && \
+    python3 setup.py install
+RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
+
 # Clean up the compiled files
-RUN rm -rf /src/*
+RUN rm -rf /opt/src/*
 
 # Reduce the image size
 RUN apt-get autoremove -y
