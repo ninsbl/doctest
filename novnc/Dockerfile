@@ -277,13 +277,13 @@ ENV CXXFLAGS ""
 ENV SHELL /bin/bash
 
 # download snap installer version 6.0
-RUN wget http://step.esa.int/downloads/6.0/installers/esa-snap_sentinel_unix_7_0.sh
+RUN wget http://step.esa.int/downloads/7.0/installers/esa-snap_all_unix_7_0.sh
 
 #change file execution rights for snap installer
-RUN chmod +x esa-snap_sentinel_unix_7_0.sh
+RUN chmod +x esa-snap_all_unix_7_0.sh
 
 # install snap with gpt
-RUN ./esa-snap_sentinel_unix_7_0.sh -q
+RUN ./esa-snap_all_unix_7_0.sh -q
 
 # link gpt so it can be used systemwide
 RUN ln -s /usr/local/snap/bin/gpt /usr/bin/gpt
