@@ -295,20 +295,20 @@ RUN export JDK_HOME="/usr/lib/jvm/default-java"
 
 # build jpy module from source
 ENV JAVA_HOME="/usr/lib/jvm/default-java"
-RUN export JAVA_HOME="/usr/lib/jvm/default-java" && \
-    cd /opt/src/ && \
-    git clone https://github.com/bcdev/jpy.git && \
-    cd /opt/src/jpy/ && \
-    python3 setup.py --maven bdist_wheel && \
-    mkdir -p /root/.snap/snap-python/snappy/&& \
-    cp /opt/src/jpy/dist/* /root/.snap/snap-python/snappy/
+# RUN export JAVA_HOME="/usr/lib/jvm/default-java" && \
+#     cd /opt/src/ && \
+#     git clone https://github.com/bcdev/jpy.git && \
+#     cd /opt/src/jpy/ && \
+#     python3 setup.py --maven bdist_wheel && \
+#     mkdir -p /root/.snap/snap-python/snappy/&& \
+#     cp /opt/src/jpy/dist/* /root/.snap/snap-python/snappy/
 
 
 # install snappy the SNAP python module
-RUN /usr/local/snap/bin/snappy-conf /usr/bin/python3
-RUN cd /root/.snap/snap-python/snappy/ && \
-    python3 setup.py install
-RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
+# RUN /usr/local/snap/bin/snappy-conf /usr/bin/python3
+# RUN cd /root/.snap/snap-python/snappy/ && \
+#     python3 setup.py install
+# RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
 
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
