@@ -294,7 +294,8 @@ RUN ln -s /usr/local/snap/bin/gpt /usr/bin/gpt
 RUN export JDK_HOME="/usr/lib/jvm/default-java"
 
 # build jpy module from source
-RUN cd /opt/src/ && \
+RUN export JAVA_HOME="/usr/lib/jvm/default-java" &&
+    cd /opt/src/ && \
     git clone https://github.com/bcdev/jpy.git && \
     cd /opt/src/jpy/ && \
     python3 setup.py --maven bdist_wheel && \
