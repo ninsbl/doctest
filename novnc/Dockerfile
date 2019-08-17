@@ -289,7 +289,7 @@ RUN ./esa-snap_all_unix_7_0.sh -q
 RUN ln -s /usr/local/snap/bin/gpt /usr/bin/gpt
 
 # set gpt max memory to 4GB
-RUN sed -i -e 's/-Xmx1G/-Xmx4G/g' /usr/local/snap/bin/gpt.vmoptions
+# RUN sed -i -e 's/-Xmx1G/-Xmx4G/g' /usr/local/snap/bin/gpt.vmoptions
 
 RUN export JDK_HOME="/usr/lib/jvm/default-java"
 
