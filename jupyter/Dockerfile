@@ -102,6 +102,7 @@ RUN apt-get update && \
     libreadline-dev \
     libsqlite3-dev \
     libspatialite-dev \
+    libspatialindex-dev \
     libtiff-dev \
     libxmu-dev \
     libzstd-dev \
@@ -142,6 +143,7 @@ RUN apt-get update && \
     python3-pydap \
     python3-rasterio \
     python3-requests \
+    python3-rpy2 \
     python3-scipy \
     python3-shapely \
     python3-sklearn \
@@ -183,6 +185,7 @@ RUN pip3 install \
     # iris \
     pysal \
     scikit-learn \
+    scikit-image \
     grass-session \
     pymodis \
     pystan \
@@ -190,7 +193,8 @@ RUN pip3 install \
     sentinelsat \
     threddsclient \
     pandas \
-    gbif
+    gbif \
+    pygbif
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
@@ -208,7 +212,7 @@ ENV CFLAGS "$MYCFLAGS"
 ENV CXXFLAGS "$MYCXXFLAGS"
 
 # Fixup python shebangs - TODO: will be resolved in future by grass-core
-WORKDIR /opt/src/grass_build
+# WORKDIR /opt/src/grass_build
 # RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env python3,'
 # RUN sed -i 's,python,python3,' include/Make/Platform.make.in
 
