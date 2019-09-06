@@ -203,7 +203,11 @@ RUN pip3 install \
     sentinelsat \
     threddsclient \
     pandas \
-    gbif
+    gbif \
+    pygbif \
+    pythesint \
+    mock \
+    nansat
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
