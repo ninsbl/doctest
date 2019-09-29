@@ -204,10 +204,13 @@ RUN pip3 install \
     threddsclient \
     pandas \
     gbif \
-    pygbif \
-    pythesint \
+    pygbif
+RUN pip3 install \
+    pythesint
+RUN pip3 install \
     mock \
     nansat
+
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
@@ -313,6 +316,8 @@ ENV JAVA_HOME="/usr/lib/jvm/default-java"
 # RUN cd /root/.snap/snap-python/snappy/ && \
 #     python3 setup.py install
 # RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
+
+WORKDIR $HOME
 
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
