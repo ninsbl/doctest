@@ -194,8 +194,10 @@ RUN pip3 install \
     threddsclient \
     pandas \
     gbif  \
-    pygbif \
-    pythesint \
+    pygbif
+RUN pip3 install \
+    pythesint
+RUN pip3 install \
     mock \
     nansat
 
