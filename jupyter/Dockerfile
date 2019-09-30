@@ -178,6 +178,7 @@ RUN apt-get update && \
 
 RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 
+RUN pip3 install --upgrade pip3
 RUN pip3 install \
     #psutil \
     cartopy \
@@ -203,9 +204,9 @@ RUN pip3 install \
     chardet \
     urllib3 \
     PyYAML
-RUN pip3 install \
+RUN pip3 install --no-cache-dir \
     pythesint
-RUN pip3 install \
+RUN pip3 install --no-cache-dir \
     nansat
 
 # unpack source code package and remove tarball archive:
