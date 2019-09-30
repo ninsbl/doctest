@@ -205,11 +205,17 @@ RUN pip3 install \
     pandas \
     gbif \
     pygbif \
+    mock \
+    xdg \
+    requests \
+    idna \
+    certifi \
+    chardet \
+    urllib3 \
     PyYAML
 RUN pip3 install \
     pythesint
 RUN pip3 install \
-    mock \
     nansat
 
 
