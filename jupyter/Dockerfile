@@ -141,6 +141,7 @@ RUN apt-get update && \
     python3-overpy \
     python3-pandas \
     python3-pydap \
+    python3-pyyaml \
     python3-rasterio \
     python3-requests \
     python3-rpy2 \
@@ -202,8 +203,7 @@ RUN pip3 install \
     idna \
     certifi \
     chardet \
-    urllib3 \
-    PyYAML
+    urllib3
 RUN pip3 install --no-cache-dir \
     pythesint
 RUN pip3 install --no-cache-dir \
