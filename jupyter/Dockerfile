@@ -197,7 +197,7 @@ RUN pip3 install \
     gbif  \
     pygbif \
     mock \
-    xdg \
+    "xdg<=1.0.7" \
     requests \
     idna \
     certifi \
