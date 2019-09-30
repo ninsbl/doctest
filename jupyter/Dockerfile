@@ -194,7 +194,8 @@ RUN pip3 install \
     threddsclient \
     pandas \
     gbif  \
-    pygbif
+    pygbif \
+    PyYAML
 RUN pip3 install \
     pythesint
 RUN pip3 install \
