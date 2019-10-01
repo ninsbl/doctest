@@ -203,7 +203,7 @@ RUN pip3 install \
     certifi \
     chardet \
     urllib3 \
-    "pyyaml<4"
+    PyYAML
 RUN pip3 install --no-cache-dir \
     pythesint
 RUN pip3 install --no-cache-dir \
