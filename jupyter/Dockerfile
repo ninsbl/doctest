@@ -79,6 +79,7 @@ RUN apt-get update && \
     libfftw3-dev \
     libfreetype6-dev \
     libgdal-dev \
+    libgdal-grass \
     libgeos-dev \
     libgnutls28-dev \
     libglu1-mesa-dev \
@@ -180,7 +181,6 @@ RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 RUN pip3 install \
     #psutil \
     cartopy \
-    django-osgeo-importer
     folium \
     # iris \
     pysal \
