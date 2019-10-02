@@ -213,7 +213,7 @@ RUN pip3 install \
     certifi \
     chardet \
     urllib3 \
-    "PyYAML>=5.2"
+    "PyYAML>=5.1"
 RUN pip3 install \
     pythesint
 RUN pip3 install \
