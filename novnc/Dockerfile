@@ -167,7 +167,6 @@ RUN apt-get update && \
     ##########################
     python3-xlsxwriter \
     python3-xlrd \
-    python3-yaml \
     postgresql \
     proj-bin \
     proj-data \
@@ -214,7 +213,7 @@ RUN pip3 install \
     certifi \
     chardet \
     urllib3 \
-    PyYAML
+    "PyYAML>=5.2"
 RUN pip3 install \
     pythesint
 RUN pip3 install \
