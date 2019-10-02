@@ -180,6 +180,7 @@ RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 RUN pip3 install \
     #psutil \
     cartopy \
+    django-osgeo-importer
     folium \
     # iris \
     pysal \
