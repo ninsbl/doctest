@@ -192,6 +192,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install \
     #psutil \
     cartopy \
+    django-osgeo-importer
     folium \
     # iris \
     pysal \
@@ -204,7 +205,7 @@ RUN pip3 install \
     sentinelsat \
     threddsclient \
     pandas \
-    gbif \
+    gbif  \
     pygbif \
     mock \
     "xdg<=1.0.7" \
@@ -214,10 +215,9 @@ RUN pip3 install \
     chardet \
     urllib3 \
     "PyYAML>=5.1"
-RUN pip3 install \
-    pythesint
-RUN pip3 install \
-    nansat
+RUN pip3 install --upgrade pip
+RUN pip3 install pythesint
+RUN pip3 install nansat
 
 
 # unpack source code package and remove tarball archive:
