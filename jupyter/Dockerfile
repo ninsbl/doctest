@@ -203,10 +203,9 @@ RUN pip3 install \
     chardet \
     urllib3 \
     "PyYAML>=5.1"
-RUN pip3 install --no-cache-dir \
-    pythesint
-RUN pip3 install --no-cache-dir \
-    nansat
+RUN pip3 install --upgrade pip
+RUN pip3 install pythesint
+RUN pip3 install nansat
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
