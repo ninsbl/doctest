@@ -197,7 +197,7 @@ RUN pip3 install \
     pygbif \
     mock \
     "xdg<=1.0.7" \
-    requests \
+    "requests>=2.20" \
     idna \
     certifi \
     chardet \
