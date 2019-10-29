@@ -186,7 +186,6 @@ RUN pip3 install \
     pysal \
     scikit-learn \
     scikit-image \
-    grass-session \
     pymodis \
     pystan \
     pymc3 \
@@ -204,11 +203,16 @@ RUN pip3 install \
     urllib3 \
     "PyYAML>=5.1"
 RUN pip3 install --upgrade pip
-RUN pip3 install pythesint
-RUN pip3 install nansat
+#RUN pip3 install pythesint
+#RUN pip3 install nansat
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
+WORKDIR /opt/src
+RUN git clone https://github.com/ninsbl/grass-session.git
+WORKDIR /opt/src/grass-session
+RUN pip3 install -e ./
+
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
 WORKDIR /opt/src/grass_build
@@ -221,11 +225,6 @@ ENV LD_LIBRARY_PATH "/usr/local/lib"
 ENV LDFLAGS "$MYLDFLAGS"
 ENV CFLAGS "$MYCFLAGS"
 ENV CXXFLAGS "$MYCXXFLAGS"
-
-# Fixup python shebangs - TODO: will be resolved in future by grass-core
-# WORKDIR /opt/src/grass_build
-# RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env python3,'
-# RUN sed -i 's,python,python3,' include/Make/Platform.make.in
 
 # Configure compile and install GRASS GIS
 ENV GRASS_PYTHON=/usr/bin/python3
@@ -264,6 +263,11 @@ RUN make install && ldconfig
 
 # enable simple grass command regardless of version number
 RUN ln -s `find /usr/local/bin -name "grass*"` /usr/local/bin/grass
+
+WORKDIR /opt/src
+RUN git clone https://github.com/OSGeo/grass-addons.git
+WORKDIR /opt/src/grass-addons/grass7/
+RUN make MODULE_TOPDIR=/usr/local/grass79/
 
 WORKDIR $HOME
 
