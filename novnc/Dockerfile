@@ -208,6 +208,7 @@ RUN pip3 install \
     mock \
     "xdg<=1.0.7" \
     requests \
+    richdem \
     idna \
     certifi \
     chardet \
