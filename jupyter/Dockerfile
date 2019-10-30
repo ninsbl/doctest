@@ -201,14 +201,12 @@ RUN pip3 install \
     chardet \
     urllib3 \
     "PyYAML>=5.1"
-RUN pip3 install --upgrade pip
-
 # unpack source code package and remove tarball archive:
-RUN mkdir /opt/src
-WORKDIR /opt/src
-RUN git clone https://github.com/ninsbl/grass-session.git
-WORKDIR /opt/src/grass-session
-RUN pip3 install -e ./
+RUN pip3 install git+https://github.com/ninsbl/grass-session.git \
+    git+https://github.com/sentinelsat/sentinelsat.git
+
+RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
+RUN pip3 install nansat
 
 WORKDIR /opt/src
 RUN git clone https://github.com/sentinelsat/sentinelsat.git
