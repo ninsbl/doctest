@@ -216,7 +216,7 @@ RUN pip3 install \
     "PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
-RUN pip3 install git+https://github.com/ninsbl/grass-session.git
+RUN pip3 install git+https://github.com/ninsbl/grass-session.git \
     git+https://github.com/sentinelsat/sentinelsat.git
 
 RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
@@ -339,5 +339,3 @@ RUN rm -rf /opt/src/*
 # Reduce the image size
 RUN apt-get autoremove -y
 RUN apt-get clean -y
-
-USER 1000
