@@ -189,7 +189,6 @@ RUN pip3 install \
     pymodis \
     pystan \
     pymc3 \
-    sentinelsat \
     threddsclient \
     pandas \
     gbif  \
@@ -203,8 +202,6 @@ RUN pip3 install \
     urllib3 \
     "PyYAML>=5.1"
 RUN pip3 install --upgrade pip
-#RUN pip3 install pythesint
-#RUN pip3 install nansat
 
 # unpack source code package and remove tarball archive:
 RUN mkdir /opt/src
@@ -212,6 +209,15 @@ WORKDIR /opt/src
 RUN git clone https://github.com/ninsbl/grass-session.git
 WORKDIR /opt/src/grass-session
 RUN pip3 install -e ./
+
+WORKDIR /opt/src
+RUN git clone https://github.com/sentinelsat/sentinelsat.git
+WORKDIR /opt/src/sentinelsat
+RUN pip3 install -e ./
+
+RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
+#RUN pip3 install nansat
+
 
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
