@@ -15,6 +15,9 @@ ARG PYTHON_VERSION=3
 ARG PROJ_VERSION=5.2.0
 ARG PROJ_DATUMGRID_VERSION=1.8
 
+# Install system packages
+USER root
+
 # Set environmental variables for GRASS GIS compilation, without debug symbols
 ENV MYCFLAGS="-O2 -std=gnu99 -m64" \
     MYLDFLAGS="-s -Wl,--no-undefined -lblas" \
@@ -24,11 +27,6 @@ ENV MYCFLAGS="-O2 -std=gnu99 -m64" \
     CFLAGS="$MYCFLAGS" \
     CXXFLAGS="$MYCXXFLAGS" \
     NUMTHREADS=2
-
-
-
-# Install system packages
-USER root
 
 WORKDIR /tmp
 
@@ -192,17 +190,17 @@ RUN pip3 install --upgrade pip
 RUN pip3 install \
     #psutil \
     cartopy \
-    django-osgeo-importer
+    django-osgeo-importer \
     folium \
     # iris \
     pysal \
     scikit-learn \
     scikit-image \
-    grass-session \
+    #grass-session \
     pymodis \
     pystan \
     pymc3 \
-    sentinelsat \
+    #sentinelsat \
     threddsclient \
     pandas \
     gbif  \
@@ -215,24 +213,13 @@ RUN pip3 install \
     chardet \
     urllib3 \
     "PyYAML>=5.1"
-RUN pip3 install --upgrade pip
-RUN pip3 install --upgrade pip
 
 # unpack source code package and remove tarball archive:
-RUN mkdir /opt/src
-WORKDIR /opt/src
-RUN git clone https://github.com/ninsbl/grass-session.git
-WORKDIR /opt/src/grass-session
-RUN pip3 install -e ./
-
-WORKDIR /opt/src
-RUN git clone https://github.com/sentinelsat/sentinelsat.git
-WORKDIR /opt/src/sentinelsat
-RUN pip3 install -e ./
+RUN pip3 install git+https://github.com/ninsbl/grass-session.git
+    git+https://github.com/sentinelsat/sentinelsat.git
 
 RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
-#RUN pip3 install nansat
-
+RUN pip3 install nansat
 
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
@@ -290,7 +277,7 @@ RUN git clone https://github.com/OSGeo/grass-addons.git
 WORKDIR /opt/src/grass-addons/grass7/
 RUN make MODULE_TOPDIR=/usr/local/grass79/
 
-WORKDIR $HOME
+WORKDIR /opt/src
 
 # Unset environmental variables to avoid later compilation issues
 ENV INTEL ""
@@ -343,6 +330,8 @@ ENV JAVA_HOME="/usr/lib/jvm/default-java"
 #     python3 setup.py install
 # RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
 
+WORKDIR $HOME
+
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
 
@@ -351,5 +340,3 @@ RUN apt-get autoremove -y
 RUN apt-get clean -y
 
 USER 1000
-
-WORKDIR $HOME
