@@ -190,7 +190,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install \
     #psutil \
     cartopy \
-    django-osgeo-importer \
+    #django-osgeo-importer \
     folium \
     # iris \
     pysal \
@@ -216,7 +216,7 @@ RUN pip3 install \
     "PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
-RUN pip3 install git+https://github.com/ninsbl/grass-session.git \
+RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions \
     git+https://github.com/sentinelsat/sentinelsat.git
 
 RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
