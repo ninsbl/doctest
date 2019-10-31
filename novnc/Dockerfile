@@ -292,9 +292,6 @@ ENV LDFLAGS ""
 ENV CFLAGS ""
 ENV CXXFLAGS ""
 
-# set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
-ENV SHELL /bin/bash
-
 # System python kernel now already available in the base application
 #COPY jupyter/systempy.sh /opt/src/
 #RUN /bin/bash /opt/src/systempy.sh
@@ -333,7 +330,10 @@ ENV JAVA_HOME="/usr/lib/jvm/default-java"
 #     python3 setup.py install
 # RUN ln -s /root/.snap/snap-python/snappy /usr/lib/python3/dist-packages/snappy
 
-WORKDIR $HOME
+# set SHELL var to avoid /bin/sh fallback in interactive GRASS GIS sessions in docker
+ENV SHELL /bin/bash
+
+WORKDIR /
 
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
@@ -341,3 +341,5 @@ RUN rm -rf /opt/src/*
 # Reduce the image size
 RUN apt-get autoremove -y
 RUN apt-get clean -y
+
+USER 1000
