@@ -209,6 +209,21 @@ RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions 
 RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
 RUN pip3 install nansat
 
+# Install Django
+RUN pip3 install \
+    coverage \
+    django \
+    django-forms-bootstrap \
+    django-leaflet \
+    thredds_crawler \
+&&  echo "alias ll='ls -lh'" >> /root/.bashrc
+
+# install Geo-SPaaS
+WORKDIR /opt/src
+RUN git clone https://github.com/nansencenter/django-geo-spaas
+WORKDIR /opt/src/django-geo-spaas
+RUN python3 setup.py install
+
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
 WORKDIR /opt/src/grass_build
