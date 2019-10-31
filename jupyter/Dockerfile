@@ -191,6 +191,9 @@ RUN pip3 install \
     pymc3 \
     threddsclient \
     pandas \
+    plotly \
+    plotly-charts \
+    plotly-geo \
     gbif  \
     pygbif \
     mock \
