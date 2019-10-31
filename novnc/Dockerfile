@@ -212,8 +212,10 @@ RUN pip3 install \
     idna \
     certifi \
     chardet \
-    urllib3 #\
-    #"PyYAML>=5.1"
+    urllib3
+
+
+#"PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
 RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions \
