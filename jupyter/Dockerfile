@@ -44,7 +44,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-    RUN apt-get update && \
+RUN pip3 install "requests>=2.20" \
+    urllib3 \
+    igraph
+
+RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
     attr \
     bc \
@@ -123,7 +127,6 @@ RUN apt-get update && \
     python3-gdal \
     python3-geopandas \
     python3-httplib2 \
-    python3-igraph \
     python3-jinja2 \
     python3-libxml2 \
     python3-mysqldb \
@@ -143,7 +146,6 @@ RUN apt-get update && \
     python3-pandas \
     python3-pydap \
     python3-rasterio \
-    python3-requests \
     python3-rpy2 \
     python3-scipy \
     python3-shapely \
@@ -154,7 +156,6 @@ RUN apt-get update && \
     python3-sqlalchemy \
     python3-tk \
     python3-unittest2 \
-    python3-urllib3 \
     python3-xlsxwriter \
     python3-xlrd \
     postgresql \
@@ -202,11 +203,10 @@ RUN pip3 install \
     idna \
     certifi \
     chardet \
-    urllib3 \
     "PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
-RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions \
+RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions
     git+https://github.com/sentinelsat/sentinelsat.git
 
 RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
