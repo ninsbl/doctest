@@ -37,12 +37,16 @@ RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-
 # Install the dependencies of GRASS GIS (we'll locally compile PROJ 4.9)
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install software-properties-common -y && \
+    apt-get install software-properties-common apt-utils python3-pip -y && \
     add-apt-repository ppa:ubuntugis/ubuntugis-unstable -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-    RUN apt-get update && \
+RUN pip3 install requests \
+    urllib3 \
+    igraph
+
+RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
     attr \
     bc \
@@ -122,7 +126,6 @@ RUN apt-get update && \
     python3-gdal \
     python3-geopandas \
     python3-httplib2 \
-    python3-igraph \
     python3-jinja2 \
     python3-libxml2 \
     python3-mysqldb \
@@ -132,7 +135,6 @@ RUN apt-get update && \
     python3-pep8 \
     python3-pillow \
     python3-pil \
-    python3-pip \
     python3-matplotlib \
     python3-netcdf4 \
     python3-numpy \
@@ -142,7 +144,6 @@ RUN apt-get update && \
     python3-pandas \
     python3-pydap \
     python3-rasterio \
-    python3-requests \
     python3-scipy \
     python3-setuptools \
     python3-shapely \
@@ -153,7 +154,6 @@ RUN apt-get update && \
     python3-sqlalchemy \
     python3-tk \
     python3-unittest2 \
-    python3-urllib3 \
     ##########################
     python3-wxgtk4.0 \
     python3-wxgtk-webview4.0 \
