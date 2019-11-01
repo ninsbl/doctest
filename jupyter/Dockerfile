@@ -286,7 +286,7 @@ RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env pyt
 
 RUN make MODULE_TOPDIR=/usr/local/grass79/
 
-WORKDIR $HOME
+WORKDIR /home/notebook
 
 # Unset environmental variables to avoid later compilation issues
 ENV INTEL ""
