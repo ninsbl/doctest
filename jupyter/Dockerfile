@@ -39,7 +39,7 @@ RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-
 # Install the dependencies of GRASS GIS (we'll locally compile PROJ 4.9)
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install software-properties-common -y && \
+    apt-get install software-properties-common apt-utils python3-pip -y && \
     add-apt-repository ppa:ubuntugis/ubuntugis-unstable -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -136,7 +136,6 @@ RUN apt-get update && \
     python3-pep8 \
     python3-pillow \
     python3-pil \
-    python3-pip \
     python3-matplotlib \
     python3-netcdf4 \
     python3-numpy \
