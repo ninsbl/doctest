@@ -224,7 +224,7 @@ RUN pip3 install \
 WORKDIR /opt/src
 RUN git clone https://github.com/nansencenter/django-geo-spaas
 WORKDIR /opt/src/django-geo-spaas
-RUN python3 setup.py install
+RUN /usr/bin/python3 setup.py install
 
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
