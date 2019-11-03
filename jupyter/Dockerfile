@@ -311,4 +311,7 @@ RUN rm -rf /opt/src/*
 RUN apt-get autoremove -y
 RUN apt-get clean -y
 
+RUN pip3 install --upgrade jupyter_client==5.3.4
+RUN chown -R notebook:notebook /home/notebook && chmod -R g+w /home/notebook
+
 USER notebook
