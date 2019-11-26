@@ -104,8 +104,9 @@ RUN apt-get update && \
     libproj-dev \
     libqgis-dev \
     libreadline-dev \
-    libsqlite3-dev \
+    libspatialindex-dev \
     libspatialite-dev \
+    libsqlite3-dev \
     libtiff-dev \
     libxmu-dev \
     libzstd-dev \
