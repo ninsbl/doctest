@@ -46,7 +46,8 @@ RUN apt-get update && \
 
 RUN pip3 install "requests>=2.20" \
     urllib3 \
-    igraph
+    igraph \
+    numpy
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
@@ -138,7 +139,6 @@ RUN apt-get update && \
     python3-pil \
     python3-matplotlib \
     python3-netcdf4 \
-    python3-numpy \
     python3-osmapi \
     python3-overpass \
     python3-overpy \
