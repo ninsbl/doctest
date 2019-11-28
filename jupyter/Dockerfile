@@ -230,11 +230,6 @@ WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass.git grass_build
 WORKDIR /opt/src/grass_build
 
-WORKDIR /opt/src
-RUN git clone https://github.com/opendatacube/datacube-core
-WORKDIR datacube-core
-# git checkout develop
-RUN /usr/bin/python3 setup.py install
 
 # Set environmental variables for GRASS GIS compilation, without debug symbols
 ENV MYCFLAGS "-O2 -std=gnu99 -m64"
@@ -290,6 +285,12 @@ WORKDIR /opt/src/grass-addons/grass7/
 RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env python3,'
 
 RUN make MODULE_TOPDIR=/usr/local/grass79/
+
+WORKDIR /opt/src
+RUN git clone https://github.com/opendatacube/datacube-core
+WORKDIR datacube-core
+# git checkout develop
+RUN /usr/bin/python3 setup.py install
 
 WORKDIR /home/notebook
 
