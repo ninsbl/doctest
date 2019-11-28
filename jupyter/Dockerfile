@@ -121,6 +121,7 @@ RUN apt-get update && \
     netcdf-bin \
     p7zip-full \
     # python3-argparse-manpage \
+    python3.6-dev \
     python3-dateutil \
     python3-dev \
     python3-extras \
