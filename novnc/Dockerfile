@@ -120,6 +120,10 @@ RUN apt-get update && \
     netcdf-bin \
     p7zip-full \
     # python3-argparse-manpage \
+    pycodestyle \
+    pyflakes \
+    pylint \
+    python-autopep8 \
     python3-dateutil \
     python3-dev \
     python3-extras \
@@ -169,6 +173,7 @@ RUN apt-get update && \
     postgresql \
     proj-bin \
     proj-data \
+    spyder3 \
     sqlite3 \
     subversion \
     unixodbc-dev \
