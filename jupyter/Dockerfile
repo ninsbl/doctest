@@ -121,6 +121,10 @@ RUN apt-get update && \
     netcdf-bin \
     p7zip-full \
     # python3-argparse-manpage \
+    pycodestyle \
+    pyflakes \
+    pylint \
+    python-autopep8 \
     python3.6-dev \
     python3-dateutil \
     python3-dev \
@@ -287,11 +291,11 @@ RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env pyt
 
 RUN make MODULE_TOPDIR=/usr/local/grass79/
 
-WORKDIR /opt/src
-RUN git clone https://github.com/opendatacube/datacube-core
-WORKDIR datacube-core
-# git checkout develop
-RUN /usr/bin/python3 setup.py install
+#WORKDIR /opt/src
+#RUN git clone https://github.com/opendatacube/datacube-core
+#WORKDIR datacube-core
+## git checkout develop
+#RUN /usr/bin/python3 setup.py install
 
 WORKDIR /home/notebook
 
