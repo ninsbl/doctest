@@ -136,7 +136,7 @@ RUN apt-get update && \
     python3-jinja2 \
     python3-libxml2 \
     python3-mysqldb \
-    python3-otb \
+    #python3-otb \
     python3-owslib \
     #python3-pdal \
     python3-pep8 \
