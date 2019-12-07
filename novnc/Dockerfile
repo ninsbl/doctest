@@ -208,7 +208,7 @@ RUN pip3 install \
     pymodis \
     pystan \
     pymc3 \
-    sentinelsat \
+    #sentinelsat \
     threddsclient \
     #pandas \
     gbif  \
