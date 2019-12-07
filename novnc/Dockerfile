@@ -196,8 +196,8 @@ RUN pip3 install --upgrade pip
 RUN pip3 install git+https://github.com/scitools/cartopy.git
 
 RUN pip3 install \
-    #psutil \
-    #cartopy \
+    psutil \
+    cartopy \
     #django-osgeo-importer \
     folium \
     # iris \
@@ -208,15 +208,15 @@ RUN pip3 install \
     pymodis \
     pystan \
     pymc3 \
-    #sentinelsat \
+    sentinelsat \
     threddsclient \
-    pandas \
+    #pandas \
     gbif  \
     pygbif \
     mock \
     "xdg<=1.0.7" \
     requests \
-    richdem \
+    #richdem \
     idna \
     certifi \
     chardet \
