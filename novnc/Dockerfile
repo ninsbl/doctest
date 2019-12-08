@@ -129,7 +129,7 @@ RUN apt-get update && \
     python3-extras \
     python3-fiona \
     python3-gdal \
-    python3-geopandas \
+    #python3-geopandas \
     python3-httplib2 \
     python3-jinja2 \
     python3-libxml2 \
@@ -146,7 +146,7 @@ RUN apt-get update && \
     python3-osmapi \
     python3-overpass \
     python3-overpy \
-    python3-pandas \
+    #python3-pandas \
     python3-pydap \
     python3-rasterio \
     python3-scipy \
@@ -195,11 +195,14 @@ RUN pip3 install --upgrade pip
 
 RUN pip3 install git+https://github.com/scitools/cartopy.git
 
+RUN pip3 install "xarray=0.14.0"
+
 RUN pip3 install \
     psutil \
-    cartopy \
+    #cartopy \
     #django-osgeo-importer \
     folium \
+    geopandas \
     # iris \
     pysal \
     scikit-learn \
@@ -210,13 +213,13 @@ RUN pip3 install \
     pymc3 \
     #sentinelsat \
     threddsclient \
-    #pandas \
+    pandas \
     gbif  \
     pygbif \
     mock \
     "xdg<=1.0.7" \
     requests \
-    #richdem \
+    richdem \
     idna \
     certifi \
     chardet \
