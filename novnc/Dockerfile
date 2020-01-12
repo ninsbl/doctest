@@ -145,7 +145,7 @@ RUN apt-get update && \
     python3-pep8 \
     python3-pillow \
     python3-pil \
-    python3-matplotlib \
+    #python3-matplotlib \
     python3-netcdf4 \
     python3-numpy \
     python3-osmapi \
@@ -210,6 +210,7 @@ RUN pip3 install \
     geopandas \
     # iris \
     pysal \
+    matplotlib \
     scikit-learn \
     scikit-image \
     #grass-session \
