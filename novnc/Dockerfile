@@ -90,6 +90,11 @@ RUN apt-get update && \
     libjpeg-dev \
     liblas-c-dev \
     liblas-dev \
+    liblas-bin \
+    liblas-c3 \
+    liblas3 \
+    liblaszip-dev \
+    liblaszip8 \
     liblapack-dev \
     libnetcdf-dev \
     libncurses5-dev \
@@ -195,7 +200,7 @@ RUN pip3 install --upgrade pip
 
 RUN pip3 install git+https://github.com/scitools/cartopy.git
 
-RUN pip3 install "xarray=0.14.0"
+RUN pip3 install "xarray==0.14.0"
 
 RUN pip3 install \
     psutil \
