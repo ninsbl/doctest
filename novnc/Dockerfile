@@ -44,7 +44,8 @@ RUN apt-get update && \
 
 RUN pip3 install requests \
     urllib3 \
-    igraph
+    igraph \
+    "matplotlib>=3.0"
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
@@ -210,7 +211,6 @@ RUN pip3 install \
     geopandas \
     # iris \
     pysal \
-    matplotlib \
     scikit-learn \
     scikit-image \
     #grass-session \
