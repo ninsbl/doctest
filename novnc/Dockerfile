@@ -45,7 +45,8 @@ RUN apt-get update && \
 RUN pip3 install requests \
     urllib3 \
     igraph \
-    "matplotlib>=3.0"
+    "matplotlib>=3.0" \
+    wrapt
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
