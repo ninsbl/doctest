@@ -68,7 +68,7 @@ RUN apt-get update && \
     python3-sip \
     python3-six \
 	snapd \
-	software-proporties-common \
+	software-properties-common \
     spyder3 \
     sqlite3 \
     subversion \
