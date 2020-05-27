@@ -118,4 +118,4 @@ RUN apt-get clean -y
 
 USER 1000
 
-RUN curl -fsSL https://get.docker.com/rootless | sh
+#RUN curl -fsSL https://get.docker.com/rootless | sh
