@@ -118,4 +118,12 @@ RUN apt-get clean -y
 
 USER 1000
 
+WORKDIR /tmp
+
+RUN curl -LO https://github.com/UNINETT/kubed/releases/download/0.2.0/kubed-linux-amd64
+COPY kubed-linux-amd64 /usr/local/bin/kubed
+RUN chmod +x /usr/local/bin/kubed
+
+WORKDIR /mnt
+
 #RUN curl -fsSL https://get.docker.com/rootless | sh
