@@ -85,7 +85,20 @@ RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 # RUN apt-get purge docker-ce docker-ce-cli containerd.io
 # RUN rm -rf /var/lib/docker &> /dev/null
 
+# RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# RUN sudo add-apt-repository \
+#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#    $(lsb_release -cs) \
+#    stable"
+
+# RUN apt-get update && \
+#     apt-get install docker-ce docker-ce-cli containerd.io
+
 RUN pip3 install --upgrade pip
+
+RUN systemctl enable snapd.service && \
+    systemctl start snapd.service
 
 RUN snap install helm3
 RUN snap install kubectl --classic
@@ -101,3 +114,5 @@ RUN apt-get autoremove -y
 RUN apt-get clean -y
 
 USER 1000
+
+RUN curl -fsSL https://get.docker.com/rootless | sh
