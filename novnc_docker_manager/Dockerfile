@@ -82,8 +82,8 @@ RUN apt-get update && \
 
 RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 
-RUN apt-get purge docker-ce docker-ce-cli containerd.io &> /dev/null
-RUN rm -rf /var/lib/docker &> /dev/null
+# RUN apt-get purge docker-ce docker-ce-cli containerd.io
+# RUN rm -rf /var/lib/docker &> /dev/null
 
 RUN pip3 install --upgrade pip
 
