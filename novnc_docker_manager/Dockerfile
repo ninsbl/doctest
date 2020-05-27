@@ -21,11 +21,13 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
-    attr \
+    apt-transport-https \
+	attr \
     bc \
     bison \
     build-essential \
     bzip2 \
+	ca-certificates \
     curl \
     cython \
     cython3 \
@@ -37,6 +39,7 @@ RUN apt-get update && \
     gettext \
     git \
     gnutls-bin \
+	gnupg-agent \
     libapt-pkg-perl \
     libdap-dev \
     libfftw3-bin \
@@ -65,6 +68,7 @@ RUN apt-get update && \
     python3-sip \
     python3-six \
 	snapd \
+	software-proporties-common \
     spyder3 \
     sqlite3 \
     subversion \
@@ -73,11 +77,14 @@ RUN apt-get update && \
     vim \
     virtualenv \
     wget \
-    xterm \
+    xterm  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN echo LANG="en_US.UTF-8" > /etc/default/locale
+
+RUN apt-get purge docker-ce docker-ce-cli containerd.io
+RUN rm -rf /var/lib/docker &> /dev/null
 
 RUN pip3 install --upgrade pip
 
