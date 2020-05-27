@@ -97,11 +97,14 @@ RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 
 RUN pip3 install --upgrade pip
 
-RUN systemctl enable snapd.service && \
-    systemctl start snapd.service
+# RUN systemctl enable snapd.service && \
+#     systemctl start snapd.service
 
-RUN snap install helm3
-RUN snap install kubectl --classic
+RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
+    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list && \
+    sudo apt-get update && \
+    sudo apt-get install -y kubectl
 
 RUN pip3 install \
     requests \
