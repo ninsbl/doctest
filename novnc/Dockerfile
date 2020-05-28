@@ -63,6 +63,7 @@ RUN apt-get update && \
     g++ \
     gcc \
     gdal-bin \
+	gdal-data\
     geany \
     gettext \
     git \
@@ -92,15 +93,16 @@ RUN apt-get update && \
     libgsl0-dev \
     libjpeg-dev \
     liblas-c-dev \
-    liblas-dev \
+    #liblas-dev \
     liblas-bin \
     liblas-c3 \
-    liblas3 \
+    #liblas3 \
     liblaszip-dev \
     liblaszip8 \
     liblapack-dev \
     libnetcdf-dev \
     libncurses5-dev \
+	libogdi-dev \
     libopenjp2-7 \
     libopenjp2-7-dev \
     libpdal-dev pdal \
