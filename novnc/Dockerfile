@@ -1,5 +1,5 @@
 # The image to use as a base image
-FROM quay.io/uninett/desktop-vnc:20190921-c096454
+FROM quay.io/uninett/desktop-vnc:20200518-9fef810
 
 # Based on:
 # https://github.com/mundialis/docker-grass-gis/blob/master/Dockerfile
@@ -85,6 +85,7 @@ RUN apt-get update && \
     libfftw3-dev \
     libfreetype6-dev \
     libgdal-dev \
+	libgdal20 \
     libgeos-dev \
     libgnutls28-dev \
     libglu1-mesa-dev \
