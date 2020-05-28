@@ -63,6 +63,7 @@ RUN apt-get update && \
     g++ \
     gcc \
     gdal-bin \
+	gdal-data \
     geany \
     gettext \
     git \
