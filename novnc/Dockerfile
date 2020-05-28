@@ -63,7 +63,6 @@ RUN apt-get update && \
     g++ \
     gcc \
     gdal-bin \
-	gdal-data \
     geany \
     gettext \
     git \
@@ -86,7 +85,6 @@ RUN apt-get update && \
     libfftw3-dev \
     libfreetype6-dev \
     libgdal-dev \
-	libgdal26 \
     libgeos-dev \
     libgnutls28-dev \
     libglu1-mesa-dev \
