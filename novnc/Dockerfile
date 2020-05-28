@@ -86,7 +86,6 @@ RUN apt-get update && \
     libfftw3-dev \
     libfreetype6-dev \
     libgdal-dev \
-	libgdal20 \
 	libgdal26 \
     libgeos-dev \
     libgnutls28-dev \
