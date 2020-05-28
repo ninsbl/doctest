@@ -40,6 +40,7 @@ RUN apt-get update && \
     git \
     gnutls-bin \
 	gnupg-agent \
+	iptables \
     libapt-pkg-perl \
     libdap-dev \
     libfftw3-bin \
@@ -71,6 +72,7 @@ RUN apt-get update && \
     spyder3 \
     sqlite3 \
     subversion \
+	uidmap \
     unixodbc-dev \
     unzip \
     vim \
@@ -106,6 +108,12 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
     apt-get update && \
     apt-get install -y kubectl
 
+WORKDIR /tmp
+
+RUN curl -LO https://github.com/UNINETT/kubed/releases/download/0.2.0/kubed-linux-amd64 && \
+    mv kubed-linux-amd64 /usr/local/bin/kubed && \
+    chmod +x /usr/local/bin/kubed
+
 RUN pip3 install \
     requests \
     urllib3
@@ -117,12 +125,6 @@ RUN apt-get autoremove -y
 RUN apt-get clean -y
 
 USER 1000
-
-WORKDIR /tmp
-
-RUN curl -LO https://github.com/UNINETT/kubed/releases/download/0.2.0/kubed-linux-amd64
-COPY kubed-linux-amd64 /usr/local/bin/kubed
-RUN chmod +x /usr/local/bin/kubed
 
 WORKDIR /mnt
 
