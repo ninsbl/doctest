@@ -92,10 +92,10 @@ RUN apt-get update && \
     libglu1-mesa-dev \
     libgsl0-dev \
     libjpeg-dev \
-    liblas-c-dev \
+    #liblas-c-dev \
     #liblas-dev \
-    liblas-bin \
-    liblas-c3 \
+    #liblas-bin \
+    #liblas-c3 \
     #liblas3 \
     liblaszip-dev \
     liblaszip8 \
