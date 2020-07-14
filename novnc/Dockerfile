@@ -240,7 +240,7 @@ RUN pip3 install \
 #"PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
-RUN pip3 install git+https://github.com/ninsbl/grass-session.git@grass_versions \
+RUN pip3 install git+https://github.com/zarch/grass-session.git \
     git+https://github.com/sentinelsat/sentinelsat.git
 
 #RUN pip3 install https://github.com/nansencenter/py-thesaurus-interface/archive/master.tar.gz
@@ -274,11 +274,10 @@ RUN /opt/src/grass_build/configure \
     --with-geos \
     --with-sqlite \
     --with-bzlib \
-    --with-liblas \
+    # --with-liblas \
     --with-zstd \
     --with-cairo --with-cairo-ldflags=-lfontconfig \
     --with-fftw \
-    --with-liblas \
     --with-pdal \
     --with-netcdf \
     --with-postgres --with-postgres-includes="/usr/include/postgresql" \
