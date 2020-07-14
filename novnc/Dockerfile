@@ -193,7 +193,7 @@ RUN apt-get update && \
     wget \
     xterm \
     zlib1g-dev qgis saga libsaga-dev python-saga rasterio libsfcgal-dev spatialite-gui \
-    shapelib libshp-dev gmt fiona octave-mapping \
+    shapelib libshp-dev gmt fiona \ #octave-mapping \
     otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev gdal-bin \
     qgis python3-qgis qgis-plugin-grass && \
     apt-get clean && \
