@@ -63,7 +63,7 @@ RUN apt-get update && \
     g++ \
     gcc \
     gdal-bin \
-	gdal-data\
+    gdal-data\
     geany \
     gettext \
     git \
@@ -86,7 +86,7 @@ RUN apt-get update && \
     libfftw3-dev \
     libfreetype6-dev \
     libgdal-dev \
-	libgdal26 \
+    libgdal26 \
     libgeos-dev \
     libgnutls28-dev \
     libglu1-mesa-dev \
@@ -102,7 +102,7 @@ RUN apt-get update && \
     liblapack-dev \
     libnetcdf-dev \
     libncurses5-dev \
-	libogdi-dev \
+    libogdi-dev \
     libopenjp2-7 \
     libopenjp2-7-dev \
     libpdal-dev pdal \
@@ -193,7 +193,8 @@ RUN apt-get update && \
     wget \
     xterm \
     zlib1g-dev qgis saga libsaga-dev python-saga rasterio libsfcgal-dev spatialite-gui \
-    shapelib libshp-dev gmt fiona \ #octave-mapping \
+    shapelib libshp-dev gmt fiona \
+    # octave-mapping \
     otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev gdal-bin \
     qgis python3-qgis qgis-plugin-grass && \
     apt-get clean && \
