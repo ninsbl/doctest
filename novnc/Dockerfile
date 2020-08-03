@@ -68,6 +68,7 @@ RUN apt-get update && \
     gettext \
     git \
     gnutls-bin \
+    htop \
     ipython3 \
     libapt-pkg-perl \
     libboost-system-dev \
@@ -209,10 +210,12 @@ RUN pip3 install git+https://github.com/scitools/cartopy.git
 RUN pip3 install "xarray==0.14.0"
 
 RUN pip3 install \
+    black \
     psutil \
     #cartopy \
     #django-osgeo-importer \
     folium \
+    flake8 \
     geopandas \
     # iris \
     pysal \
@@ -222,6 +225,8 @@ RUN pip3 install \
     pymodis \
     pystan \
     pymc3 \
+    pymc4 \
+    pymc-learn \
     #sentinelsat \
     threddsclient \
     pandas \
