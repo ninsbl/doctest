@@ -228,6 +228,7 @@ RUN pip3 install \
     pymc4 \
     pymc-learn \
     #sentinelsat \
+    tables \
     threddsclient \
     pandas \
     gbif  \
@@ -239,7 +240,8 @@ RUN pip3 install \
     idna \
     certifi \
     chardet \
-    urllib3
+    urllib3 \
+    xgboost
 
 
 #"PyYAML>=5.1"
