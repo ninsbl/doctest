@@ -211,6 +211,7 @@ RUN pip3 install "xarray==0.14.0"
 
 RUN pip3 install \
     black \
+    dash \
     psutil \
     #cartopy \
     #django-osgeo-importer \
