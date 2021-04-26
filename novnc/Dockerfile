@@ -365,8 +365,8 @@ WORKDIR /
 
 RUN pip3 install \
     pystan \
-    pymc3 \
-    pymc4
+    pymc3
+    # pymc4
 
 #"PyYAML>=5.1"
 
