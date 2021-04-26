@@ -12,7 +12,7 @@ LABEL maintainer="stefan.blumentrath@nina.no"
 # PACKAGES VERSIONS
 ARG GRASS_VERSION=7.9
 ARG PYTHON_VERSION=3
-ARG PROJ_VERSION=5.2.0
+ARG PROJ_VERSION=7.2.1
 ARG PROJ_DATUMGRID_VERSION=1.8
 
 # Install system packages
@@ -209,7 +209,7 @@ RUN pip3 install git+https://github.com/scitools/cartopy.git
 
 RUN pip3 install "xarray==0.14.0"
 
-RUN pip3 install \
+RUN TMPDIR=/tmp pip3 install --cache-dir=/tmp \
     black \
     dash \
     psutil \
