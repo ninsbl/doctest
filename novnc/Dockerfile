@@ -377,4 +377,4 @@ RUN rm -rf /opt/src/*
 RUN apt-get autoremove -y
 RUN apt-get clean -y
 
-USER 1000
+USER vncuser
