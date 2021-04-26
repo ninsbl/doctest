@@ -163,7 +163,7 @@ RUN apt-get update && \
     python3-scipy \
     python3-setuptools \
     python3-shapely \
-    python3-sklearn \
+    #python3-sklearn \
     python3-simplejson \
     python3-sip \
     python3-six \
