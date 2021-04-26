@@ -209,7 +209,7 @@ RUN pip3 install git+https://github.com/scitools/cartopy.git
 
 RUN pip3 install "xarray==0.14.0"
 
-RUN TMPDIR=/tmp pip3 install --cache-dir=/tmp \
+RUN pip3 install \
     black \
     dash \
     psutil \
@@ -226,9 +226,6 @@ RUN TMPDIR=/tmp pip3 install --cache-dir=/tmp \
     scikit-image \
     #grass-session \
     pymodis \
-    pystan \
-    pymc3 \
-    pymc4 \
     pymc-learn \
     #sentinelsat \
     tables \
@@ -246,8 +243,6 @@ RUN TMPDIR=/tmp pip3 install --cache-dir=/tmp \
     urllib3 \
     xgboost
 
-
-#"PyYAML>=5.1"
 
 # unpack source code package and remove tarball archive:
 RUN pip3 install git+https://github.com/zarch/grass-session.git \
@@ -367,6 +362,13 @@ ENV JAVA_HOME="/usr/lib/jvm/default-java"
 ENV SHELL /bin/bash
 
 WORKDIR /
+
+RUN pip3 install \
+    pystan \
+    pymc3 \
+    pymc4
+
+#"PyYAML>=5.1"
 
 # Clean up the compiled files
 RUN rm -rf /opt/src/*
