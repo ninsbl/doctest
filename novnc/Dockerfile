@@ -1,5 +1,5 @@
 # The image to use as a base image
-FROM quay.io/uninett/desktop-vnc:20200518-9fef810
+FROM quay.io/uninett/desktop-vnc:20200629-39665cb
 
 # Based on:
 # https://github.com/mundialis/docker-grass-gis/blob/master/Dockerfile
@@ -218,8 +218,10 @@ RUN pip3 install \
     folium \
     flake8 \
     geopandas \
+    landsatxplore \
     # iris \
     pysal \
+    pygeoapi \
     scikit-learn \
     scikit-image \
     #grass-session \
