@@ -303,10 +303,10 @@ RUN make install && ldconfig
 
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass-addons.git
-WORKDIR /opt/src/grass-addons/grass7/
+WORKDIR /opt/src/grass-addons/src/
 # Fixup python shebangs - TODO: will be resolved in future by grass-core
 RUN find -name '*.py' | xargs sed -i 's,#!/usr/bin/env python,#!/usr/bin/env python3,'
-RUN make MODULE_TOPDIR=/usr/local/grass79/
+RUN make MODULE_TOPDIR=/usr/local/grass80/
 
 WORKDIR /opt/src
 
