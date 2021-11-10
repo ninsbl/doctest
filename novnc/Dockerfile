@@ -1,5 +1,5 @@
 # The image to use as a base image
-FROM quay.io/uninett/desktop-vnc:20200629-39665cb
+FROM quay.io/uninett/desktop-vnc:20211109-b32b627
 
 # Based on:
 # https://github.com/mundialis/docker-grass-gis/blob/master/Dockerfile
@@ -10,9 +10,9 @@ LABEL authors="Stefan Blumentrath"
 LABEL maintainer="stefan.blumentrath@nina.no"
 
 # PACKAGES VERSIONS
-ARG GRASS_VERSION=7.9
+ARG GRASS_VERSION=8.0
 ARG PYTHON_VERSION=3
-ARG PROJ_VERSION=7.2.1
+ARG PROJ_VERSION=8.1
 ARG PROJ_DATUMGRID_VERSION=1.8
 
 # Install system packages
