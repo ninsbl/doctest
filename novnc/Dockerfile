@@ -192,7 +192,7 @@ RUN apt-get update && \
     virtualenv \
     wget \
     xterm \
-    zlib1g-dev qgis saga libsaga-dev python-saga rasterio libsfcgal-dev spatialite-gui \
+    zlib1g-dev qgis saga libsaga-dev python3-saga rasterio libsfcgal-dev spatialite-gui \
     shapelib libshp-dev gmt fiona \
     # octave-mapping \
     otb-bin libotb-dev otb-qgis libotb-apps libgdal-dev gdal-bin \
