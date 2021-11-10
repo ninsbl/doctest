@@ -158,7 +158,6 @@ RUN apt-get update && \
     python3-overpass \
     python3-overpy \
     #python3-pandas \
-    python3-pydap \
     python3-rasterio \
     python3-scipy \
     python3-setuptools \
@@ -225,6 +224,7 @@ RUN pip3 install \
     scikit-learn \
     scikit-image \
     #grass-session \
+	pydap \
     pymodis \
     pymc-learn \
     #sentinelsat \
