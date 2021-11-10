@@ -134,7 +134,7 @@ RUN apt-get update && \
     pycodestyle \
     pyflakes \
     pylint \
-    python-autopep8 \
+    python3-autopep8 \
     python3-dateutil \
     python3-dev \
     python3-extras \
