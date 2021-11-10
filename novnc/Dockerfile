@@ -204,9 +204,9 @@ RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install git+https://github.com/scitools/cartopy.git
+RUN pip3 install cartopy  # git+https://github.com/scitools/cartopy.git
 
-RUN pip3 install "xarray==0.14.0"
+RUN pip3 install xarray  # "xarray==0.14.0"
 
 RUN pip3 install \
     black \
