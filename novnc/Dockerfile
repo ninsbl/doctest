@@ -299,7 +299,7 @@ RUN /opt/src/grass_build/configure \
 RUN make install && ldconfig
 
 # enable simple grass command regardless of version number
-RUN ln -s `find /usr/local/bin -name "grass*"` /usr/local/bin/grass
+# RUN ln -s `find /usr/local/bin -name "grass*"` /usr/local/bin/grass
 
 WORKDIR /opt/src
 RUN git clone https://github.com/OSGeo/grass-addons.git
